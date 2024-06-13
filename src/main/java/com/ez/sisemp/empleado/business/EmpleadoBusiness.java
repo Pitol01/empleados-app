@@ -82,6 +82,19 @@ public class EmpleadoBusiness {
         );
     }
 
+    public void mostrarEmpleadosConEdadYDepartamento() {
+        List<Empleado> empleados = obtenerEmpleadosJpa();
+        for (Empleado empleado : empleados) {
+            System.out.println("Empleado: " + empleado.nombres() + " " + empleado.apellidoPat() + " " + empleado.apellidoMat());
+            System.out.println("Departamento: " + empleado.departamento());
+            System.out.println("Edad: " + empleado.edad());
+            System.out.println("Correo: " + empleado.correo());
+            System.out.println("Salario: " + empleado.salario());
+            System.out.println("Fecha de Nacimiento: " + empleado.fechaNacimiento());
+            System.out.println("-----------");
+        }
+    }
+
     public EmpleadoDashboard obtenerDatosDashboard() throws SQLException, ClassNotFoundException {
         return empleadoDashboardDao.get();
     }
